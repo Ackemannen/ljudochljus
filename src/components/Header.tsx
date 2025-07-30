@@ -12,8 +12,8 @@ const Header = () => {
     { name: "Ljud", href: "/ljud" },
     { name: "Ljus", href: "/ljus" },
     { name: "Rök", href: "/rok" },
-    { name: "Om Oss", href: "/om-oss" },
-    { name: "Kontakt", href: "#kontakt" },
+    { name: "Om", href: "/om" },
+    { name: "Villkor", href: "/villkor" },
   ];
 
   return (

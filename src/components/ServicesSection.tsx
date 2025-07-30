@@ -17,6 +17,7 @@ import {
 import soundImage from "../assets/home/mics.jpg";
 import lightingImage from "../assets/home/lights.jpg";
 import smokeImage from "../assets/home/smoke.jpg";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const services = [
@@ -74,7 +75,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
@@ -136,12 +137,14 @@ const ServicesSection = () => {
                   ))}
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full bg-black text-white group-hover:bg-purple-600 group-hover:text-black transition-all duration-300 cursor-pointer"
-                >
-                  Läs mer om {service.title}
-                </Button>
+                <Link to={`/${service.id}`}>
+                  <Button
+                    variant="outline"
+                    className="w-full bg-black text-white group-hover:bg-purple-600 group-hover:text-black transition-all duration-300 cursor-pointer"
+                  >
+                    Läs mer om {service.title}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

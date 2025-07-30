@@ -1,5 +1,6 @@
 import { Facebook, Phone, Mail, MapPin } from "lucide-react";
 import logo from "../assets/Logomain.jpg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -130,12 +131,12 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a
-                href="/villkor"
+              <Link
+                to="/villkor"
                 className="hover:text-purple-100 transition-colors"
               >
                 Villkor
-              </a>
+              </Link>
               <p>Integritet</p>
               <span className="text-xs">Sedan 2010</span>
             </div>
