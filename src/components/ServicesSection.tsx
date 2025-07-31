@@ -74,8 +74,20 @@ const ServicesSection = () => {
     },
   ];
 
+  const colorClassMapBg = {
+    purple: "bg-purple-500",
+    yellow: "bg-yellow-500",
+    blue: "bg-blue-500",
+  };
+
+  const colorClassMapShadow = {
+    purple: "shadow-purple-500",
+    yellow: "shadow-yellow-500",
+    blue: "shadow-blue-500",
+  };
+
   return (
-    <section className="py-20">
+    <section id="services" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
@@ -91,7 +103,10 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className={`bg-card border-gray-800 hover:shadow-purple-500 hover:shadow-[0px_0px_20px_0px] transition-all duration-500 group animate-fade-in p-0 pb-6`}
+              className={`bg-card border-gray-800 hover:${
+                colorClassMapShadow[service.color]
+              }
+              hover:shadow-[0px_0px_20px_0px] transition-all duration-500 group animate-fade-in p-0 pb-6`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="relative overflow-hidden rounded-t-lg">
@@ -102,7 +117,9 @@ const ServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent"></div>
                 <div
-                  className={`absolute top-4 right-4 w-12 h-12 bg-${service.color}-500 rounded-xl flex items-center justify-center shadow-glow`}
+                  className={`absolute top-4 right-4 w-12 h-12 ${
+                    colorClassMapBg[service.color]
+                  } rounded-xl flex items-center justify-center shadow-glow`}
                 >
                   <service.icon className="w-6 h-6 text-foreground" />
                 </div>
@@ -130,7 +147,9 @@ const ServicesSection = () => {
                       className="flex items-center text-sm"
                     >
                       <div
-                        className={`w-2 h-2 bg-${service.color}-500 rounded-full mr-3 flex-shrink-0`}
+                        className={`w-2 h-2 ${
+                          colorClassMapBg[service.color]
+                        } rounded-full mr-3 flex-shrink-0`}
                       ></div>
                       <span className="text-gray-400">{feature}</span>
                     </div>
@@ -139,8 +158,9 @@ const ServicesSection = () => {
 
                 <Link to={`/${service.id}`}>
                   <Button
-                    variant="outline"
-                    className="w-full bg-black text-white group-hover:bg-purple-600 group-hover:text-black transition-all duration-300 cursor-pointer"
+                    variant="default"
+                    className={`w-full bg-black text-white group-hover:bg-purple-500
+                     group-hover:text-black transition-all duration-300 cursor-pointer`}
                   >
                     Läs mer om {service.title}
                   </Button>

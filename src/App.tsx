@@ -6,6 +6,7 @@ import Lighting from "./pages/Lighting";
 import Sound from "./pages/Sound";
 import Smoke from "./pages/Smoke";
 import Terms from "./pages/Terms";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/ljus" element={<Lighting />} />
           <Route path="/rok" element={<Smoke />} />
           <Route path="/villkor" element={<Terms />} />
+          <Route path="/om" element={<About />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

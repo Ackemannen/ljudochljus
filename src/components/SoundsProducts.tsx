@@ -186,7 +186,7 @@ const SoundsProducts = () => {
               <h2 className="text-3xl font-bold text-white">
                 Enskilda komponenter
               </h2>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-center text-gray-400">
                 Det finns mer utrustning, så söker du nått annat, hör av dig med
                 en förfrågan!
               </p>

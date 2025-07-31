@@ -12,7 +12,7 @@ const Header = () => {
     { name: "Ljud", href: "/ljud" },
     { name: "Ljus", href: "/ljus" },
     { name: "Rök", href: "/rok" },
-    { name: "Om", href: "/om" },
+    { name: "NLL", href: "/om" },
     { name: "Villkor", href: "/villkor" },
   ];
 
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between w-full">
           {/* LOGO */}
-          <div className="flex items-center gap-6">
+          <Link to="/" className="flex items-center gap-6">
             <img
               src={logo}
               alt="Norrköpings ljud & ljus"
@@ -30,7 +30,7 @@ const Header = () => {
             <h1 className="!text-xl font-serif font-bold text-white">
               Norrköpings Ljud & Ljus
             </h1>
-          </div>
+          </Link>
 
           {/* NAVIGATION */}
           <nav className="hidden md:block">
@@ -52,12 +52,14 @@ const Header = () => {
               <PhoneIcon className="w-5" />
               076-1313516
             </span>
-            <Button
-              variant="default"
-              className="bg-purple-600 text-black cursor-pointer hover:bg-purple-500"
-            >
-              Kontakta Oss
-            </Button>
+            <Link to="/om">
+              <Button
+                variant="default"
+                className="bg-purple-600 text-black cursor-pointer hover:bg-purple-500"
+              >
+                Kontakta Oss
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Navigation */}
@@ -96,12 +98,14 @@ const Header = () => {
                   <MailIcon className="w-4 h-4" />
                   <span>info@nkpgljudochljus.se</span>
                 </div>
-                <Button
-                  variant="default"
-                  className="bg-purple-600 text-black cursor-pointer hover:bg-purple-500"
-                >
-                  Kontakta Oss
-                </Button>
+                <Link to="/om">
+                  <Button
+                    variant="default"
+                    className="bg-purple-600 text-black cursor-pointer hover:bg-purple-500"
+                  >
+                    Kontakta Oss
+                  </Button>
+                </Link>
               </div>
             </div>
           </nav>

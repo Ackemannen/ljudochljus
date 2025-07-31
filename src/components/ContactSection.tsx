@@ -225,7 +225,7 @@ const ContactSection = () => {
             </span>
             <div className="w-2 h-2 bg-brand-gold rounded-full hidden sm:block"></div>
             <span className="text-sm text-gray-400">
-              E-post besvaras inom 24h
+              E-post besvaras så snabbt som möjligt
             </span>
           </div>
         </div>

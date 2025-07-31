@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Professionell ljud- och ljusuthyrning för alla typer av evenemang
-              i Norrköping. Vi skapar minnesvärt atmosfär för ditt event.
+              i Norrköping. Vi skapar en minnesvärd atmosfär för ditt event.
             </p>
           </div>
 

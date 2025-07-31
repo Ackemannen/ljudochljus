@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, Music, Lightbulb, Sparkles } from "lucide-react";
 import backgroundImage from "../assets/home/background.png";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -26,10 +27,10 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center mb-4 sm:mb-0">
         <div className="max-w-4xl mx-auto animate-fade-in">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-card backdrop-blur-sm rounded-full px-4 py-2 mb-8 mt-4">
+          <div className="inline-flex items-center space-x-2 bg-card backdrop-blur-sm rounded-full px-4 py-2 mb-8 mt-32 sm:mt-0">
             <Sparkles className="w-4 h-4 text-brand-gold" />
             <span className="text-base font-medium text-foreground">
               Professionell festuthyrning sedan 2010
@@ -37,7 +38,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="!text-4xl md:!text-6xl font-serif font-bold text-foreground mb-6">
+          <h1 className="!text-4xl md:!text-6xl font-serif font-bold mb-6">
             Gör din fest
             <span className="block text-brand-purple">oförglömlig</span>
           </h1>
@@ -73,17 +74,23 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button
-              size="lg"
-              className="bg-purple-600 text-black shadow-glow cursor-pointer hover:bg-purple-500 transition-all duration-300"
-            >
-              Boka Utrustning
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <Link to="/om">
+              <Button
+                size="lg"
+                className="bg-purple-600 text-black shadow-glow cursor-pointer hover:bg-purple-500 transition-all duration-300"
+              >
+                Boka Utrustning
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
               className="bg-gray-900 border-gray-600 cursor-pointer hover:bg-gray-700 transition-all duration-300"
+              onClick={() => {
+                const section = document.getElementById("services");
+                if (section) section.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               <Play className="w-5 h-5 mr-2" />
               Se Våra Tjänster
@@ -114,7 +121,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 hidden sm:block left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-brand-purple rounded-full flex justify-center">
           <div className="w-1 h-3 bg-brand-purple rounded-full mt-2 animate-pulse"></div>
         </div>
